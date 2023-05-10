@@ -1,0 +1,1 @@
+INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES ('errorism_time', 'Time Record', '0');
