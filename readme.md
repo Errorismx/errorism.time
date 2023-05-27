@@ -68,7 +68,7 @@ exports['errorism.time']:stop(index,identifier,save)
 | `index` | `string` | **Required**. Index of time record |
 | `identifier`| `string` | **Required**. Identifier of player |
 | `save`| `boolean` | Save on database? |
-| `return`| `int` | Time result in milliseconds |
+| `return`| `int` | Time result in milliseconds (airtime) |
 ## Usage/Examples
 
 ```lua
