@@ -37,6 +37,9 @@ exports('get', get)
 
 function start(index,identifier)
     if index == 'online' then return end
+    if not startTime[identifier] then
+        startTime[identifier] = {}
+    end
     startTime[identifier][index] = GetGameTimer()
 end
 exports('start', start)
