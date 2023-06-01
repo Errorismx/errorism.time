@@ -52,6 +52,7 @@ function stop(index,identifier,save)
             store.set(index, resultTime)
         end)
     end
+    startTime[identifier][index] = nil
     return resultTime
 end
 exports('stop', stop)
