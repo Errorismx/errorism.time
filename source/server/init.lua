@@ -45,6 +45,7 @@ end
 exports('start', start)
 
 function stop(index,identifier,save)
+    if not startTime?[identifier]?[index] then return 0 end
     if index == 'online' then return end
     local resultTime = get(index,identifier,save)
     if save then
