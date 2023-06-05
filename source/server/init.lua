@@ -18,12 +18,18 @@ AddEventHandler('playerDropped', function()
 end)
 
 function getCurrent(index,identifier)
+    if not startTime[identifier] then
+        startTime[identifier] = {}
+    end
     local startAt = startTime[identifier][index] or 0
     return (GetGameTimer() - startAt)
 end
 exports('getCurrent', getCurrent)
 
 function get(index,identifier,onDatabase)
+    if not startTime[identifier] then
+        startTime[identifier] = {}
+    end
     if not onDatabase then
         return getCurrent(index,identifier)
     end
