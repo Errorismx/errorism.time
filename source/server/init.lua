@@ -5,7 +5,7 @@ local startTime = {}
 AddEventHandler('esx:playerLoaded', function(playerId, xPlayer)
     local identifier = xPlayer.identifier
     startTime[identifier] = {}
-    startTime[identifier].online = GetGameTimer()
+    startTime[identifier].online = os.time() * 1000
 end)
 AddEventHandler('playerDropped', function()
     local xPlayer = ESX.GetPlayerFromId(source)
@@ -22,7 +22,7 @@ function getCurrent(index,identifier)
         startTime[identifier] = {}
     end
     local startAt = startTime[identifier][index] or 0
-    return (GetGameTimer() - startAt)
+    return ((os.time() * 1000) - startAt)
 end
 exports('getCurrent', getCurrent)
 
@@ -46,7 +46,7 @@ function start(index,identifier)
     if not startTime[identifier] then
         startTime[identifier] = {}
     end
-    startTime[identifier][index] = GetGameTimer()
+    startTime[identifier][index] = os.time() * 1000
 end
 exports('start', start)
 
