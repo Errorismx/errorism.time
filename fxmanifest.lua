@@ -5,6 +5,7 @@ description 'This resource is created by Errorism\'s Scripts'
 lua54 'yes'
 
 shared_scripts {
+	'@es_extended/imports.lua',
 	'source/shared/init.lua',
 }
 

@@ -2,13 +2,7 @@ local Shared = {
     DEBUG = GetConvarInt('errorism:debug', 0) == 1
 }
 
-function debug(...)
-    if not Shared.DEBUG then
-        return
-    end
-    print(locale('debug_prefix') .. tostring(...))
-end
-function DumpTable(table, nb)
+local function DumpTable(table, nb)
 	if nb == nil then
 		nb = 0
 	end
@@ -36,6 +30,13 @@ function DumpTable(table, nb)
 	else
 		return tostring(table)
 	end
+end
+
+function debug(...)
+    if not Shared.DEBUG then
+        return
+    end
+    print(GetCurrentResourceName() .. '\t\n' .. DumpTable({...}))
 end
 
 local expCache = {}
